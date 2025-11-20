@@ -18,8 +18,10 @@ export default function Sidebar() {
         } flex-col gap-5 font-['Poppins'] bg-slate-900 md:w-[64px] w-[200px] group hover:w-[200px] transition-all duration-300 ease-in-out`}
       >
         {/* <div className=" bg-slate-900 h-screen w-[64px] absolute  group-hover:w-[200px] transition-all duration-300 ease-in-out left-0 top-0"> */}
-        <div className="flex items-center gap-3">
-          <img src={IMAGES.Logo} className="w-8" />
+        <div className="flex items-center gap-3 w-full">
+          <div className="w-[64px] flex justify-center">
+            <img src={IMAGES.Logo} className="w-8" />
+          </div>
         </div>
         <ul className="pt-5 flex flex-col gap-1 border-t-[1px] border-slate-400">
           <NavLink

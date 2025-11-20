@@ -5,7 +5,7 @@ import Loader from "../Loader";
 import { IMAGES } from "../../constant/images";
 import { useUploadedMeetingStore } from "../../store/useUploadedMeetingStore";
 
-export default function UploadRecording() {
+export default function UploadRecording({ onUploaded }: any) {
   const [uploadedFile, setUploadedFile]: any = useState(null);
   const [uploadFileModalOpen, setUploadFileModalOpen] = useState(false);
   const [meetingTitle, setMeetingTitle] = useState("");
@@ -44,6 +44,9 @@ export default function UploadRecording() {
       setMeetingTitle("");
       setUploadedMeeting(meeting);
       setShowLoader(false);
+
+            if (onUploaded) onUploaded(meeting);
+
     } catch (err) {
       setUploadFileModalOpen(false);
       setMeetingTitle("");
